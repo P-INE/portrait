@@ -1,0 +1,30 @@
+/* タブレット向けレイアウト */
+@media (max-width: 1000px) {
+  /* ギャラリーアイテムのサイズを調整 */
+  .contents-item {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+/* スマートフォン向けレイアウト */
+@media (max-width: 670px) {
+  /* 画面幅の約半分（隙間を考慮）のサイズにする */
+  .contents-item {
+    width: calc(50% - 8px); /* 隙間(gap)の半分を引く */
+    height: auto; /* 高さは自動に */
+    aspect-ratio: 1 / 1; /* 縦横比を1:1に保つ（正方形） */
+  }
+
+  .copy-container h1 { /* h1の指定がなかったので追加 */
+    font-size: 32px;
+  }
+
+  .copy-container p {
+    font-size: 16px;
+  }
+
+  footer {
+    text-align: center;
+  }
+}

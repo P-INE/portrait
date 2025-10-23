@@ -1,0 +1,222 @@
+html, body,
+ul, ol, li,
+h1, h2, h3, h4, h5, h6, p,
+form, input, div, label, textarea { /* label, textareaを追加 */
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+.wrapper {
+  width: 100%;
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 340px;
+}
+
+header {
+  background-color: #D7EEFF;
+  height: 130px;
+}
+
+.title {
+  color: #4682B4;
+  padding: 20px 40px;
+  font-family: 'arial black';
+}
+
+.header-right {
+  text-align: right;
+  font-size: 30px;
+  font-family: 'arial black';
+  padding-right: 40px;
+}
+
+a:link, a:visited {
+  color: #4682B4;
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+a:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.top-wrapper {
+  height: 800px;
+  background-image: url("IMG_0070.jpg");
+  background-size: cover;
+}
+
+.main {
+  text-align: center;
+  padding-top: 150px;
+}
+
+.main img {
+  border-radius: 50%;
+  width: 210px;
+  height: 210px;
+  object-fit: cover;
+}
+
+.copy-container {
+  text-align: center;
+  color: #D7EEFF;
+  font-family: 'arial';
+  font-size: 24px;
+}
+
+.contents {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 0 15px;
+  margin-top: 40px;
+  margin-bottom: 60px; /* ▼▼▼ 変更点1：フッターとの間に余白を追加 ▼▼▼ */
+}
+
+.contents h2 {
+  width: 100%;
+  color: #4682B4;
+  text-align: center;
+  font-size: 40px;
+  padding-bottom: 30px;
+  font-family: 'arial black';
+}
+
+.contents-item {
+  width: 300px;
+  height: 300px;
+}
+
+.contents-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* ▼▼▼ この部分を丸ごと置き換えてください ▼▼▼ */
+.footer {
+  background-color: hsl(207, 50%, 55%);
+  color: #fff;
+  height: 340px;
+  padding-top: 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.section-title {
+  font-size: 20px;
+  padding-top: 20px;
+  margin-bottom: 5px; /* タイトル下の余白を調整 */
+  font-family: 'arial';
+}
+
+.contact-form {
+  text-align: center;
+}
+
+.form-item {
+  margin-bottom: 10px; /* 各入力項目ごとの余白 */
+}
+
+/* このlabelへの指定が、文字が重ならないようにする最も重要な部分です */
+.form-item label {
+  display: block; /* ラベルを独立した行に配置します */
+  font-family: 'arial';
+  font-size: 18px;
+  margin-bottom: 4px; /* ラベルと入力欄の間の余白 */
+  text-align: center;
+}
+
+input, textarea {
+  width: 250px;
+  font-size: 15px;
+  border: 2px solid #4682B4;
+  padding: 5px;
+}
+
+textarea {
+  height: 100px;
+}
+
+.contact-submit {
+  background-color: #4682B4;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 5px; /* 送信ボタンの上に少し余白を追加 */
+}
+
+.contact-submit:active {
+  background-color: white;
+  color: #889eab;
+}
+/* ▲▲▲ ここまで ▲▲▲ */
+
+/* ポップアップ（モーダル）のスタイル */
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, .85);
+}
+
+#modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#modal-image {
+  width: auto;
+  height: auto;
+  max-width: calc(100vw - 40px);
+  max-height: calc(100vh - 40px);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* stylesheet.css に追記 */
+
+/* 最初は画像を透明にして、少し下に配置しておく */
+.contents-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* 画面に入ったら、このクラスをJSで追加する */
+.contents-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contents-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease; /* なめらかな変化のための transition を追加 */
+}
+
+.contents-item img:hover {
+  opacity: 0.8; /* 少しだけ透明にする */
+}

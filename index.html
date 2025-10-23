@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1">
+  <title>M.T.artworks</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <link rel="stylesheet" href="responsive.css">
+  <meta name="Keywords" content="">
+  <meta name="description" content="">
+  <script type="text/javascript" src="../ga.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <h1 class="title">Fragments of Me</h1>
+      <div class="header-right">
+        <a href="https://twitter.com/ydrtstcvuhbiuhouyguyfyrdr6ccghvycyf">twitter</a>
+        &nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/mh_bocchi/?r=nametag">instagram</a>
+      </div>
+    </header>
+
+    <div class="top-wrapper">
+      <div class="main">
+        <img src="DSC03543.jpg" alt="プロフィール写真">
+      </div>
+      <div class="copy-container">
+        <h1>Profile</h1>
+        <p>name:Maho</p>
+        <p>birth:02.06.2002</p>
+        <p>born:Aichi.Japan</p>
+        <p>Graduate student</p>
+        <p>Learning languages: Eng/中文/Қазақ/others</p>
+      </div>
+    </div>
+
+    <div class="contents">
+      <h2>●GALLERY●</h2>
+      <div class="contents-item">
+        <img src="DSC_3454.JPG" class="popup">
+      </div>
+      <div class="contents-item">
+        <img src="DSC_3828.JPG" class="popup">
+      </div>
+      <div class="contents-item">
+        <img src="DSC_3966.JPG" class="popup">
+      </div>
+      <div class="contents-item">
+        <img src="DSC_4098.JPG" class="popup">
+      </div>
+      <div class="contents-item">
+        <img src="DSC_4099.JPG" class="popup">
+      </div>
+      <div class="contents-item">
+        <img src="DSC_4315.JPG" class="popup">
+      </div>
+      <div class="contents-item">
+        <img src="DSC_4410.JPG" class="popup">
+      </div>
+      <div class="contents-item">
+        <img src="DSC_4924.JPG" class="popup">
+      </div>
+      <div class="contents-item">
+        <img src="IMG_4230.JPG" class="popup">
+      </div>
+      <div class="contents-item">
+        <img src="IMG_4235.jpg" class="popup">
+      </div>
+      <div class="contents-item">
+        <img src="IMG_4540.JPG" class="popup">
+      </div>
+      <div class="contents-item">
+        <img src="IMG_4541.JPG" class="popup">
+      </div>
+      <div class="contents-item">
+        <img src="IMG_4544.JPG" class="popup">
+      </div>
+      <div class="contents-item">
+        <img src="IMG_4744.JPG" class="popup">
+      </div>
+      <div class="contents-item">
+        <img src="IMG_5178.JPG" class="popup">
+      </div>
+      <div class="contents-item">
+        <img src="IMG_5169.JPG" class="popup">
+      </div>
+      <div class="contents-item">
+        <img src="IMG_5170.JPG" class="popup">
+      </div>
+      <div class="contents-item">
+        <img src="IMG_5172.JPG" class="popup">
+      </div>
+      <div class="contents-item">
+        <img src="IMG_5173.JPG" class="popup">
+      </div>
+      <div class="contents-item">
+        <img src="IMG_6084.JPG" class="popup">
+      </div>
+      <div class="contents-item">
+        <img src="IMG_6105.JPG" class="popup">
+      </div>
+      <div class="contents-item">
+        <img src="IMG_6683.JPG" class="popup">
+      </div>
+      <div class="contents-item">
+        <img src="IMG_6741.JPG" class="popup">
+      </div>
+      <div class="contents-item">
+        <img src="IMG_6749.JPG" class="popup">
+      </div>
+      <div class="contents-item">
+        <img src="IMG_6757.JPG" class="popup">
+      </div>
+      <div class="contents-item">
+        <img src="IMG_6758.JPG" class="popup">
+      </div>
+      <div class="contents-item">
+        <img src="IMG_6775.JPG" class="popup">
+      </div>
+      <div class="contents-item">
+        <img src="IMG_6945.JPG" class="popup">
+      </div>
+      <div class="contents-item">
+        <img src="IMG_6948.JPG" class="popup">
+      </div>
+      <div class="contents-item">
+        <img src="IMG_6951.JPG" class="popup">
+      </div>
+      <div class="contents-item">
+        <img src="IMG_7125.JPG" class="popup">
+      </div>
+      <div class="contents-item">
+        <img src="IMG_7129.JPG" class="popup">
+      </div>
+    </div>
+
+    <div id="modal" class="hidden">
+      <div id="modal-content">
+        <img id="modal-image" src="" alt="拡大画像">
+      </div>
+    </div>
+
+<div class="footer">
+  <div class="contact-form">
+    <div class="contact-form">
+  <h3 class="section-title">●お問い合わせ●</h3>
+  <form action="https://formspree.io/f/xyznqyvz" method="POST">
+    <div class="form-item">
+      <label for="mail">mail</label>
+      <input id="mail" type="email" name="_replyto">
+    </div>
+    <div class="form-item">
+      <label for="contents">contents</label>
+      <textarea id="contents" name="message"></textarea>
+    </div>
+    <input class="contact-submit" type="submit" value="送信">
+  </form>
+</div>
+  </div>
+</div>
+
+  <script>
+    const $modal = document.getElementById('modal');
+    const $img = document.getElementById('modal-image');
+    const images = document.querySelectorAll('.popup');
+
+    for (let i = 0; i < images.length; i++) {
+      images[i].onclick = function () {
+        $img.src = this.src;
+        $modal.classList.remove('hidden');
+      }
+    }
+
+    $modal.onclick = function () {
+      $modal.classList.add('hidden');
+    }
+
+    const targets = document.querySelectorAll('.contents-item');
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target); 
+      }
+    });
+  });
+
+  targets.forEach(target => {
+    observer.observe(target);
+  });
+  </script>
+</body>
+</html>
